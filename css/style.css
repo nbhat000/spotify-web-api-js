@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    /* global font-size setting */
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    background-color: gray;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin: .5em;
+}
+
+p {
+    
+}
+
+form input {
+    margin: 0.4rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#main {
+    width: 80%;
+    margin: 0 auto 2em auto;
+    background-color: white;
+    box-shadow: 10px 10px 5px rgba(0,0,0,.25);
+    height: 5rem;
+    padding: 1rem;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}

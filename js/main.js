@@ -15,16 +15,32 @@
 var spotifyApi = new SpotifyWebApi();
 spotifyApi.setAccessToken('BQDly_vbupB3PXmITRY9WU-yWy_9pz6vWJLHJMqr3UBkhY3hdm-Jaqj5-_TcR792Pzf4kHUFOlNYhfwYcVGkk89pwLv-jdkoT85wiRyxB3_jnzna4GgF1qUFYH0croS399DBwn0WoSM60DGBuP2OSFHea_YVfjog5piJjNqFTsaTcXfaBGMQb0jm');
 
-// get Elvis' albums, passing a callback. When a callback is passed, no Promise is returned
-spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', function(err, data) {
-  if (err) console.error(err);
-  else console.log('Artist albums', data);
-});
+// // get Elvis' albums, passing a callback. When a callback is passed, no Promise is returned
+// spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', function(err, data) {
+//   if (err) console.error(err);
+//   else console.log('Artist albums', data);
+// });
+//
+// // get Elvis' albums, using Promises through Promise, Q or when
+// spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
+//   .then(function(data) {
+//     console.log('Artist albums', data);
+//   }, function(err) {
+//     console.error(err);
+//   });
+//
+//   // search artists whose name contains 'Love'
+//   spotifyApi.searchArtists('Rihanna')
+//     .then(function(data) {
+//       console.log('Search artists by "Love"', data);
+//     }, function(err) {
+//       console.error(err);
+//     });
 
-// get Elvis' albums, using Promises through Promise, Q or when
-spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
+// search tracks whose name, album or artist contains 'Love'
+spotifyApi.searchTracks('New York')
   .then(function(data) {
-    console.log('Artist albums', data);
+    console.log('Search by "New York"', data);
   }, function(err) {
     console.error(err);
-  });
+});
