@@ -22,14 +22,17 @@ $(function() {
         console.log("artistName", data.tracks.items[0].artists[0].name);
         console.log("songName", data.tracks.items[0].name);
         console.log("albumArt", data.tracks.items[0].album.images[0].url);
-
+        console.log("ID", data.tracks.items[0].uri)
+        $('.songResult').remove();
         for (var i = 0; i < 3; i++) {
           var $albumArt = $('<img>').attr('src', data.tracks.items[i].album.images[0].url).addClass('albumArt');
           var $songName = $('<p>').text(data.tracks.items[i].name).addClass("songName");
           var $artistName = $('<p>').text(data.tracks.items[i].artists[0].name).addClass("artistName");
 
+          var $playButton = $(`<iframe src="https://open.spotify.com/embed?uri=${data.tracks.items[i].uri}" width="80" height="100" frameborder="0" allowtransparency="true"></iframe>`)
+
           var $songResultDiv = $('<div>').addClass('songResult');
-          $songResultDiv.append($albumArt).append($songName).append("<br>").append("<br>").append("<br>").append("<br>").append($artistName);
+          $songResultDiv.append($albumArt).append($songName).append("<br>").append("<br>").append("<br>").append("<br>").append($artistName).append($playButton);
           $('#map').after($songResultDiv);
         }
       }, function(err) {

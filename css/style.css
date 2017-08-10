@@ -79,3 +79,13 @@ form input {
   float:left;
   margin-top:.2em;
 }
+
+iframe {
+  float:right;
+  margin-bottom: 1em;
+
+}
+
+.searchParagraph {
+  margin-bottom: .5em;
+}
