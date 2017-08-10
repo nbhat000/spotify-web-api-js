@@ -19,6 +19,7 @@ h1 {
     margin: .5em;
     color: white;
     text-shadow: 4px 4px #444;
+    /*font-family: "Helvetica", sans-serif;*/
 }
 
 form input {
@@ -42,4 +43,39 @@ form input {
     width: 80%;
     box-shadow: 10px 10px 5px rgba(0,0,0,.25);
     margin: 0 auto;
+}
+
+.songResult {
+  width: 80%;
+  margin: 2em auto 2em auto;
+  background-color: white;
+  box-shadow: 10px 10px 5px rgba(0,0,0,.25);
+  height: 10rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.albumArt {
+  width:8em;
+  height:8em;
+  float:left;
+  margin:0 3em 0 1em;
+}
+
+.songName {
+  font-family: "Helvetica", sans-serif;
+  font-size:3em;
+  font-weight:700;
+  float:left;
+  display:block;
+  margin-top:.3em;
+}
+
+.artistName {
+  font-family: "Helvetica", sans-serif;
+  font-size:1.5em;
+  color:grey;
+  font-weight:300;
+  float:left;
+  margin-top:.2em;
 }

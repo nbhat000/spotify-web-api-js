@@ -19,7 +19,19 @@ $(function () {
       .then(function(data) {
         // manipulate data here
         console.log(`searching ${$query}`, data);
+        console.log("artistName", data.tracks.items[0].artists[0].name);
+        console.log("songName", data.tracks.items[0].name);
+        console.log("albumArt", data.tracks.items[0].album.images[0].url);
 
+        for (var i=0; i<3; i++) {
+          var $albumArt= $('<img>').attr('src', data.tracks.items[i].album.images[0].url).addClass('albumArt');
+          var $songName = $('<p>').text(data.tracks.items[i].name).addClass("songName");
+          var $artistName = $('<p>').text(data.tracks.items[i].artists[0].name).addClass("artistName");
+
+          var $songResultDiv = $('<div>').addClass('songResult');
+          $songResultDiv.append($albumArt).append($songName).append("<br>").append("<br>").append("<br>").append("<br>").append($artistName);
+          $('#map').after($songResultDiv);
+        }
       }, function(err) {
         console.error(err);
     });
