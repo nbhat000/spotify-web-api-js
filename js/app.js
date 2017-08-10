@@ -2,6 +2,7 @@ $(function() {
     // default position is New York, NY
     initMap(40.730610, -73.935242);
 
+    console.log('connected to app.js');
 });
 
 function initMap(latitude, longitude) {

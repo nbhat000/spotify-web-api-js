@@ -11,9 +11,9 @@
 //     console.log(response);
 // })
 
-
-var spotifyApi = new SpotifyWebApi();
-spotifyApi.setAccessToken('BQDly_vbupB3PXmITRY9WU-yWy_9pz6vWJLHJMqr3UBkhY3hdm-Jaqj5-_TcR792Pzf4kHUFOlNYhfwYcVGkk89pwLv-jdkoT85wiRyxB3_jnzna4GgF1qUFYH0croS399DBwn0WoSM60DGBuP2OSFHea_YVfjog5piJjNqFTsaTcXfaBGMQb0jm');
+// THIS WORKS UNCOMMENT
+// var spotifyApi = new SpotifyWebApi();
+// spotifyApi.setAccessToken('BQDly_vbupB3PXmITRY9WU-yWy_9pz6vWJLHJMqr3UBkhY3hdm-Jaqj5-_TcR792Pzf4kHUFOlNYhfwYcVGkk89pwLv-jdkoT85wiRyxB3_jnzna4GgF1qUFYH0croS399DBwn0WoSM60DGBuP2OSFHea_YVfjog5piJjNqFTsaTcXfaBGMQb0jm');
 
 // // get Elvis' albums, passing a callback. When a callback is passed, no Promise is returned
 // spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', function(err, data) {
@@ -37,10 +37,13 @@ spotifyApi.setAccessToken('BQDly_vbupB3PXmITRY9WU-yWy_9pz6vWJLHJMqr3UBkhY3hdm-Ja
 //       console.error(err);
 //     });
 
+// THIS WORKS UNCOMMENT
 // search tracks whose name, album or artist contains 'Love'
-spotifyApi.searchTracks('New York')
-  .then(function(data) {
-    console.log('Search by "New York"', data);
-  }, function(err) {
-    console.error(err);
-});
+// spotifyApi.searchTracks('New York')
+//   .then(function(data) {
+//     // manipulate data here
+//     console.log('Search by "New York"', data);
+//
+//   }, function(err) {
+//     console.error(err);
+// });
