@@ -1,6 +1,6 @@
 console.log('connected to test.js');
 
-$(function () {
+$(function() {
   console.log('inside dom ready');
 
   // create EventListener
@@ -23,8 +23,8 @@ $(function () {
         console.log("songName", data.tracks.items[0].name);
         console.log("albumArt", data.tracks.items[0].album.images[0].url);
 
-        for (var i=0; i<3; i++) {
-          var $albumArt= $('<img>').attr('src', data.tracks.items[i].album.images[0].url).addClass('albumArt');
+        for (var i = 0; i < 3; i++) {
+          var $albumArt = $('<img>').attr('src', data.tracks.items[i].album.images[0].url).addClass('albumArt');
           var $songName = $('<p>').text(data.tracks.items[i].name).addClass("songName");
           var $artistName = $('<p>').text(data.tracks.items[i].artists[0].name).addClass("artistName");
 
@@ -34,7 +34,48 @@ $(function () {
         }
       }, function(err) {
         console.error(err);
-    });
+      });
+
+
+    // send get request to google maps geocoding API
+    // get latLng and update map
+    // https://developers.google.com/maps/documentation/geocoding/intro
+    var url = `https://maps.googleapis.com/maps/api/geocode/json?address=${$query}`;
+    // GET request
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json'
+      })
+      .done((res) => {
+        console.log('in done');
+
+        var latLng = res.results[0].geometry.location;
+        console.log(latLng);
+
+        initMap(latLng.lat, latLng.lng);
+      })
+      .fail(() => {
+        console.log('google geocoding request failed');
+      })
+      .always(() => {
+        console.log('google geocoding request complete');
+      });
+  });
+});
+
+function initMap(latitude, longitude) {
+  var def = {
+    lat: latitude,
+    lng: longitude
+  };
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10,
+    center: def
   });
 
-});
+  var marker = new google.maps.Marker({
+    position: def,
+    map: map
+  });
+}
